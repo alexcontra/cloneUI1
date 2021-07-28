@@ -1,10 +1,11 @@
+import 'package:clone_ui_1/screens/coffe_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //stack function for slide menu .
-Widget stackItem(
-    String photoAsset, String name, String quantity, double price) {
+Widget stackItem(String photoAsset, String name, String quantity, double price,
+    BuildContext context) {
   return Container(
     width: 200.0,
     height: 350.0,
@@ -88,7 +89,16 @@ Widget stackItem(
               ),
               child: IconButton(
                 onPressed: () {
-                  //go to page
+                  //go to coffe page
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CoffeScreen(
+                              imgPath: photoAsset,
+                              description: 'Description here',
+                              price: price,
+                              quantity: quantity,
+                              name: name)));
                 },
                 icon: Icon(
                   Icons.add,
@@ -100,7 +110,6 @@ Widget stackItem(
     ),
   );
 }
-//TODO** creating stack function for every coffe page
 
 // container for list view  under search text field
 
