@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
               child: Container(
                 height: MediaQuery.of(context).size.height,
                 width: 100.0,
-                color: Color.fromRGBO(160, 82, 45, 0.3),
+                color: Color.fromRGBO(160, 82, 45, 0.2),
               ),
             ),
             Positioned(
@@ -80,7 +80,7 @@ class _MainScreenState extends State<MainScreen> {
               child: Padding(
                 padding: EdgeInsets.only(left: 100.0),
                 child: Container(
-                  width: MediaQuery.of(context).size.width / 1.2,
+                  width: MediaQuery.of(context).size.width * 1.2,
                   height: 50.0,
                   child: TextField(
                     decoration: InputDecoration(
@@ -109,16 +109,44 @@ class _MainScreenState extends State<MainScreen> {
                     scrollDirection: Axis.horizontal,
                     children: [
                       listContainer(colorPinkModified, brownModified, 'RITA',
-                          Colors.white),
+                          Colors.white.withOpacity(0.8)),
                       SizedBox(width: 10.0),
                       listContainer(colorPinkModified, brownModified,
-                          'COLD BREW', Colors.black.withOpacity(0.6)),
+                          'COLD BREW', Colors.white.withOpacity(0.8)),
                       SizedBox(width: 10.0),
                       listContainer(colorPinkModified, brownModified, 'NESCAFE',
-                          Colors.black.withOpacity(0.6)),
+                          Colors.white.withOpacity(0.8)),
                       SizedBox(width: 10.0),
                       listContainer(colorPinkModified, brownModified,
-                          'ESSPRESO', Colors.black.withOpacity(0.6)),
+                          'ESSPRESO', Colors.white.withOpacity(0.8)),
+                      SizedBox(width: 10.0),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 355.0,
+              child: Padding(
+                padding: EdgeInsets.only(left: 25.0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 400.0,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      stackItem(
+                          'assets/caffe_cup5.png', 'ESPRESSO', '150ml', 25.0),
+                      SizedBox(
+                        width: 50.0,
+                      ),
+                      stackItem(
+                          'assets/caffe_cup7.png', '   LATTE', '330ml', 35.55),
+                      SizedBox(
+                        width: 50.0,
+                      ),
+                      stackItem(
+                          'assets/caffe_cup8.png', 'CAPPUCINO', '250ml', 27.99),
                     ],
                   ),
                 ),
