@@ -1,10 +1,12 @@
+import 'package:clone_ui_1/screens/coffe_screen.dart';
+import 'package:clone_ui_1/screens/main_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //stack function for slide menu .
-Widget stackItem(
-    String photoAsset, String name, String quantity, double price) {
+Widget stackItem(String photoAsset, String name, String quantity, double price,
+    BuildContext context) {
   return Container(
     width: 200.0,
     height: 350.0,
@@ -88,7 +90,16 @@ Widget stackItem(
               ),
               child: IconButton(
                 onPressed: () {
-                  //go to page
+                  //go to coffe page
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CoffeScreen(
+                              imgPath: photoAsset,
+                              description: 'description',
+                              price: price,
+                              quantity: quantity,
+                              name: name)));
                 },
                 icon: Icon(
                   Icons.add,
@@ -100,7 +111,6 @@ Widget stackItem(
     ),
   );
 }
-//TODO** creating stack function for every coffe page
 
 // container for list view  under search text field
 
@@ -122,5 +132,72 @@ Widget listContainer(Color colorofcontainer1, Color colorofcontainer2,
         style: GoogleFonts.maitree(fontSize: 14.0, color: textcolor),
       ),
     ),
+  );
+}
+
+// stack function for every coffe page
+Widget coffeScreenGenerator(String name, String imgPath, String description,
+    double price, String quantity, BuildContext context) {
+  return Stack(
+    children: [
+      Positioned(
+          child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height / 2,
+        child: ClipRRect(
+          child: Image(
+              image: AssetImage('assets/brownph.jpeg'), fit: BoxFit.cover),
+        ),
+      )),
+      Positioned(
+          top: 280.0,
+          right: 108.0,
+          child: Container(
+            width: 200.0,
+            height: 200.0,
+            child: Image(
+              image: AssetImage(imgPath),
+            ),
+          )),
+      Positioned(
+          bottom: 250.0,
+          left: 140.0,
+          child: Text(
+            '$name',
+            style: GoogleFonts.robotoCondensed(
+                fontSize: 30.0, fontWeight: FontWeight.bold),
+          )),
+      Positioned(
+          bottom: 220.0,
+          left: 170.0,
+          child: Text(
+            '$quantity',
+            style: GoogleFonts.robotoCondensed(
+                fontSize: 30.0, fontWeight: FontWeight.w500),
+          )),
+      Positioned(
+          bottom: 200.0,
+          child: Padding(
+            padding: EdgeInsets.only(left: 15.0),
+            child: Text('DESCRIPTION',
+                style: GoogleFonts.robotoCondensed(
+                  fontSize: 20.0,
+                  color: Colors.brown[500],
+                  fontWeight: FontWeight.bold,
+                )),
+          )),
+      Positioned(
+          top: 50.0,
+          child: IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MainScreen()));
+            },
+            icon: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.black,
+            ),
+          )),
+    ],
   );
 }

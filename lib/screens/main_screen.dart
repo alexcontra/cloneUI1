@@ -118,8 +118,8 @@ class _MainScreenState extends State<MainScreen> {
                           Colors.white.withOpacity(0.8)),
                       SizedBox(width: 10.0),
                       listContainer(colorPinkModified, brownModified,
-                          'ESSPRESO', Colors.white.withOpacity(0.8)),
-                      SizedBox(width: 10.0),
+                          'ESPRESSO', Colors.white.withOpacity(0.8)),
+                      SizedBox(width: 20.0),
                     ],
                   ),
                 ),
@@ -135,18 +135,18 @@ class _MainScreenState extends State<MainScreen> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      stackItem(
-                          'assets/caffe_cup5.png', 'ESPRESSO', '150ml', 25.0),
+                      stackItem('assets/caffe_cup5.png', 'ESPRESSO', '150ml',
+                          25.0, context),
                       SizedBox(
                         width: 50.0,
                       ),
-                      stackItem(
-                          'assets/caffe_cup7.png', '   LATTE', '330ml', 35.55),
+                      stackItem('assets/caffe_cup7.png', '   LATTE', '330ml',
+                          35.55, context),
                       SizedBox(
                         width: 50.0,
                       ),
-                      stackItem(
-                          'assets/caffe_cup8.png', 'CAPPUCINO', '250ml', 27.99),
+                      stackItem('assets/caffe_cup8.png', 'CAPPUCINO', '250ml',
+                          27.99, context),
                       SizedBox(
                         width: 50.0,
                       ),
