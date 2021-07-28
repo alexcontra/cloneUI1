@@ -1,3 +1,5 @@
+![Screenshot_1627485466](https://user-images.githubusercontent.com/59314040/127348680-8e0db512-af17-4b15-8cd0-12e8ebd04e79.png)
+![Screenshot_1627485456](https://user-images.githubusercontent.com/59314040/127348691-88a181ab-ea55-4bc5-8e47-b12999b35e92.png)
 # clone_ui_1
 ## Getting Started
 
