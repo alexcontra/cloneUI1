@@ -147,6 +147,9 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                       stackItem(
                           'assets/caffe_cup8.png', 'CAPPUCINO', '250ml', 27.99),
+                      SizedBox(
+                        width: 50.0,
+                      ),
                     ],
                   ),
                 ),
